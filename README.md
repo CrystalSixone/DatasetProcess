@@ -2,7 +2,7 @@
 
 
 
-#### - /61 is mainly used to convert the VOC dataset downloaded from the Internet into COCO dataset.
+#### (1)  /61 is mainly used to convert the VOC dataset downloaded from the Internet into COCO dataset.
 
 - At present, it is only for single class. 
 
@@ -41,7 +41,7 @@
   - Check whether all images can be open correctly. (Some may have been broken.)
   - if everything is ok, go to `VocToCoco.py`.
 
-#### - /others  is mainly used to transform the dataset annotated with labelme into COCO dataset.
+####  (2) /others  is mainly used to transform the dataset annotated with labelme into COCO dataset.
 
 ​	Please refer to the following website: https://blog.csdn.net/weixin_42882838/article/details/102843082
 
