@@ -244,9 +244,9 @@ class VocToCoco():
         self.makeCocoDir()
         self.generateTrainValTest()
 
-        xml_val_files = glob.glob(os.path.join(self.coco_path, '/xml/xml_val', "*.xml"))
-        xml_test_files = glob.glob(os.path.join(self.coco_path, '/xml/xml_test', "*.xml"))
-        xml_train_files = glob.glob(os.path.join(self.coco_path, '/xml/xml_train', "*.xml"))
+        xml_val_files = glob.glob(os.path.join(self.coco_path, 'xml/xml_val', "*.xml"))
+        xml_test_files = glob.glob(os.path.join(self.coco_path, 'xml/xml_test', "*.xml"))
+        xml_train_files = glob.glob(os.path.join(self.coco_path, 'xml/xml_train', "*.xml"))
 
         self.vocToCoco(xml_val_files, self.coco_path + '/annotations/instances_val.json')
         self.vocToCoco(xml_test_files, self.coco_path + '/annotations/instances_test.json')
@@ -257,7 +257,7 @@ class VocToCoco():
 if __name__ == '__main__':
     val_num = 40
     test_num = 0
-    voc_xml_path = '/home/w61/PatternRecognition/Fire_dataset/VOC2020/Annotations'
-    voc_img_path = '/home/w61/PatternRecognition/Fire_dataset/VOC2020/JPEGImages'
+    voc_xml_path = '/home/w61/PatternRecognition/smoke/Annotations/Annotations'
+    voc_img_path = '/home/w61/PatternRecognition/smoke/images/images'
     Trans = VocToCoco(val_num,test_num,voc_xml_path,voc_img_path)
     Trans.run()
