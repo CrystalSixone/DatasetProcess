@@ -257,7 +257,7 @@ class VocToCoco():
 if __name__ == '__main__':
     val_num = 40
     test_num = 0
-    voc_xml_path = '/home/w61/PatternRecognition/smoke/Annotations/Annotations'
-    voc_img_path = '/home/w61/PatternRecognition/smoke/images/images'
+    voc_xml_path = '/home/w61/PatternRecognition/Fire_dataset/Dataset/new_ann'
+    voc_img_path = '/home/w61/PatternRecognition/Fire_dataset/Dataset/new_img'
     Trans = VocToCoco(val_num,test_num,voc_xml_path,voc_img_path)
     Trans.run()

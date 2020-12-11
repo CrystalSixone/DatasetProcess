@@ -24,7 +24,7 @@ class ReadDir():
             tree = ET.parse(item)
             root = tree.getroot()
             for member in root.findall("object"):
-                if member[0].text != obj_name:
+                if member[0].text == obj_name:
                     member[0].text = obj_name
                     if overwrite:
                         tree.write(item)
@@ -38,27 +38,32 @@ class ReadDir():
         print(names)
     
     def readJson(self):
-        img_paths = '/home/w61/PatternRecognition/smoke/images/images'
-        imgs = os.listdir(img_paths)
-        for img in imgs:
-            src = os.path.join(img_paths,img)
-            try:
-                img_ = cv2.imread(src)
-                img_ = cv2.cvtColor(img_, cv2.COLOR_BGR2RGB)
-            except Exception as e:
-                print(src)
-        # with open(self.path,'r')as f:
-        #     data = json.load(f)
-        # for item in data["images"]:
-        #     img_path = img_paths + "/" + item["file_name"]
+        #img_paths = '/home/w61/PatternRecognition/smoke/images/images'
+        #imgs = os.listdir(img_paths)
+        # for img in imgs:
+        #     src = os.path.join(img_paths,img)
         #     try:
-        #         img = cv2.imread(img_path)
-        #         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  
+        #         img_ = cv2.imread(src)
+        #         img_ = cv2.cvtColor(img_, cv2.COLOR_BGR2RGB)
         #     except Exception as e:
-        #         print(item["file_name"])      
+        #         print(src)
+        with open(self.path,'r')as f:
+            data = json.load(f)
+
+        for cat in data['annotations']:
+            print(cat)
+        """ for item in data["images"]:
+            img_path = img_paths + "/" + item["file_name"]
+            try:
+                img = cv2.imread(img_path)
+                img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  
+            except Exception as e:
+                print(item["file_name"])     """  
+    
             
 if __name__ == '__main__':
     xml_path = '/home/w61/PatternRecognition/smoke/Annotations/Annotations'
-    json_path = '/home/w61/PatternRecognition/Yet-Another-EfficientDet-Pytorch/datasets/smoke/annotations/instances_train.json'
-    read = ReadDir(xml_path)
+    json_path = '/home/w61/PatternRecognition/Yet-Another-EfficientDet-Pytorch/datasets/smoke/annotations/instances_val.json'
+    json_path_2 = '/home/w61/PatternRecognition/Yet-Another-EfficientDet-Pytorch/datasets/fire/annotations/instances_val.json'
+    read = ReadDir(json_path_2)
     read.readJson()
