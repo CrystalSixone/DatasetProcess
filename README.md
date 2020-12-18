@@ -4,8 +4,6 @@
 
 #### (1)  /61 is mainly used to convert the VOC dataset downloaded from the Internet into COCO dataset.
 
-- At present, it is only for single class. 
-
 - VOC dataset should be like this:
 
   **--VOC dataset**
